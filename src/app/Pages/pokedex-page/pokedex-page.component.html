@@ -1,0 +1,16 @@
+<div id="logo">
+    <img class="logo" src="http://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-png-2000.png"/>
+</div>
+
+<div class="navlink">
+    <button><a class="Pokedex" [routerLink]="['/']">Pokedex</a></button>
+    <button><a class="Pokedex" [routerLink]="['/create']">Create</a></button>
+</div>
+
+<app-pokemon-list 
+    (pkmnEvent)="onPokemonSelected($event)"
+    [pokemons]="pokemons">
+
+</app-pokemon-list>
+
+<app-pokemon-detail [pokemonToDisplay]="pokemonDetail"></app-pokemon-detail>

@@ -1,0 +1,42 @@
+<h2>Select your Pokemon</h2>
+
+<form (submit)="pokemonForm.valid && add()" #pokemonForm="ngForm">
+    <div class="formulaire">
+        <label for="name">Name :</label>
+        <input [(ngModel)]="pkmn.name" placeholder="" name="name" #nameRef="ngModel" required/>
+    </div>
+    <div *ngIf="pokemonForm.submitted && nameRef.errors">
+        <span class="errorText" *ngIf="nameRef.errors.required">
+            * Pokemon name's is required</span>
+    </div>
+    <div class="formulaire">
+        <label for="type">Type :</label>
+        <input [(ngModel)]="pkmn.type" placeholder="" name="type" #typeRef="ngModel" required/>
+    </div>
+    <div *ngIf="pokemonForm.submitted && typeRef.errors">
+            <span class="errorText" *ngIf="typeRef.errors.required">
+                * Type is required</span>
+    </div>
+
+    <div class="formulaire">
+        <label for="img">Image :</label>
+        <input [(ngModel)]="pkmn.url" placeholder="" name="img" #urlRef="ngModel" required/>
+    </div>
+    <div *ngIf="pokemonForm.submitted && urlRef.errors">
+            <span class="errorText" *ngIf="urlRef.errors.required">
+                * Image of pokemon is required</span>
+    </div>
+    <div class="formulaire">
+        <label for="description">Description :</label>
+        <input [(ngModel)]="pkmn.description" placeholder="" name="description" #descriptionRef="ngModel" required minlength="10"/>
+    </div>
+    <div *ngIf="pokemonForm.submitted && descriptionRef.errors">
+            <span class="errorText" *ngIf="descriptionRef.errors.required">
+                * Description is required</span>
+            <span class="errorText" *ngIf="descriptionRef.errors.minlength">10 characters minimum</span>
+    </div>
+    <div>
+        <button>Add</button>
+    </div>
+</form>
+

@@ -1,0 +1,9 @@
+<section>
+    <div id='pokemon' *ngFor="let p of pokemons">
+        <img class="pokepoke" src="{{ p.url }}"/>
+        <div class="desc">
+            <p>{{ p.name }}</p>
+            <button (click)="catchPokemon(p)">Catch Him</button>
+        </div>
+    </div>
+</section>

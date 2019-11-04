@@ -1,0 +1,6 @@
+<div class="display" *ngIf="pokemonToDisplay">
+<p id="title">{{ pokemonToDisplay.name }}</p>
+<img [src]="pokemonToDisplay.url" alt="{{ pokemonToDisplay.name }}"/>
+<p>Type: {{ pokemonToDisplay.type }}</p>
+<p>{{ pokemonToDisplay.description }}</p>
+</div>
